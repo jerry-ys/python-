@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鱼C工作室官网 - 主页</title>
+    <meta name="keywords" content="鱼C, 鱼C工作室, FishC, 编程学习, 编程教程, Python, 免费视频, 原创书籍, 在线课程, AI助理, 计算机教育, 编程入门, 编程VIP, 算法教学, 互动答疑, 小甲鱼, 编程社区, 在线学习, 代码分享, 时间轴, 会员特权">
+    <meta name="description" content="鱼C工作室，专注编程教育与创新，提供免费视频教程、原创书籍、AI助理、会员专属特权等丰富服务。让编程学习变得更简单有趣，零基础也能轻松入门。">
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="shortcut icon" href="favicon.ico">
+</head>
+<body>
+    <!-- 加载指示器 -->
+    <div id="loader"></div>
+    
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo">鱼C工作室</div>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="menu" id="menu">
+            <a href="javascript:void(0)"
+                onclick="showPageWithLoading(0); history.pushState({}, '', '?page=videos');">视频教程</a>
+            <a href="javascript:void(0)"
+                onclick="showPageWithLoading(1); history.pushState({}, '', '?page=books');">原创书籍</a>
+            <a href="javascript:void(0)"
+                onclick="showPageWithLoading(2); history.pushState({}, '', '?page=timeline');">时间轴</a>
+            <a href="javascript:void(0)"
+                onclick="showPageWithLoading(3); history.pushState({}, '', '?page=vip');">VIP特权</a>
+            <a href="https://fishc.com.cn" target="_blank">互动答疑</a>
+            <a href="https://fishc.taobao.com" target="_blank">加入我们<span class="small-tip">打卡赠书</span></a>
+        </div>
+    </nav>
+    
+    <!-- 滑动容器 -->
+    <div class="slider" id="sliderContainer">
+        <!-- 视频教程页面 -->
+        <div class="page" id="video-page">
+            <div class="hero">
+                <h1>欢迎来到鱼C课程平台</h1>
+                <p>让学习编程变得简单有趣，零基础也能轻松上手！</p>
+                <a href="https://fishc.taobao.com" target="_blank" class="cta-btn">立即加入会员</a>
+            </div>
+            
+            <div class="container">
+                <h2>鱼C精选课程</h2>
+                <div class="courses" id="courses">
+                    <!-- 课程卡片将通过JavaScript动态添加 -->
+                </div>
+                
+                <!-- 分页 -->
+                <ul class="pagination" id="pagination"></ul>
+            </div>
+        </div>
+        
+        <!-- 原创书籍页面 -->
+        <div class="page" id="book-page">
+            <div class="container">
+                <h2>鱼C原创书籍</h2>
+                <div class="products-container" id="products-container">
+                    <!-- 书籍卡片将通过JavaScript动态添加 -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- 时间轴页面 -->
+        <div class="page" id="timeline-page">
+            <div class="timeline-container">
+                <ul class="timeline" id="timeline">
+                    <!-- 时间轴条目将通过JavaScript动态添加 -->
+                </ul>
+                <button id="toggle-timeline" class="toggle-button" data-expanded="false">展开完整时间轴</button>
+            </div>
+        </div>
+
+        <!-- VIP特权页面 -->
+        <section id="vip-page" class="page">
+            <div class="container">
+                <h2>VIP会员特权对比</h2>
+                <div class="vip-comparison">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>特权内容</th>
+                                <th>普通会员</th>
+                                <th>高级会员</th>
+                                <th>至尊会员</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>在线视频教程</td>
+                                <td><span class="yes">✔</span></td>
+                                <td><span class="yes">✔</span></td>
+                                <td><span class="yes">✔</span></td>
+                            </tr>
+                            <tr>
+                                <td>课后作业免费</td>
+                                <td><span class="no">✘</span></td>
+                                <td><span class="no">✘</span></td>
+                                <td><span class="yes">✔</span></td>
+                            </tr>
+                            <tr>
+                                <td>收费主题免费</td>
+                                <td><span class="no">✘</span></td>
+                                <td><span class="no">✘</span></td>
+                                <td><span class="yes">✔</span></td>
+                            </tr>
+                            <tr>
+                                <td>配套课件下载</td>
+                                <td><span class="no">✘</span></td>
+                                <td><span class="yes">✔</span></td>
+                                <td><span class="yes">✔</span></td>
+                            </tr>
+                            <tr>
+                                <td>配套源码下载</td>
+                                <td><span class="no">✘</span></td>
+                                <td><span class="yes">✔</span></td>
+                                <td><span class="yes">✔</span></td>
+                            </tr>
+                            <tr>
+                                <td>顶级 AI 助理</td>
+                                <td><span class="no">✘</span></td>
+                                <td><span class="yes">✔</span></td>
+                                <td><span class="yes">✔</span></td>
+                            </tr>
+                            <tr>
+                                <td>会员臻享资源</td>
+                                <td><span class="no">✘</span></td>
+                                <td><span class="yes">✔</span></td>
+                                <td><span class="yes">✔</span></td>
+                            </tr>
+                            <tr>
+                                <td>限量鱼币津贴</td>
+                                <td><span class="no">✘</span></td>
+                                <td><span class="yes">✔</span></td>
+                                <td><span class="yes">✔</span></td>
+                            </tr>
+                            <tr>
+                                <td>每月赠送鱼币</td>
+                                <td><span class="no">✘</span></td>
+                                <td><span class="yes">✔</span></td>
+                                <td><span class="yes">✔</span></td>
+                            </tr>
+                            <tr>
+                                <td>获得会员徽章</td>
+                                <td><span class="no">✘</span></td>
+                                <td><span class="yes">✔</span></td>
+                                <td><span class="yes">✔</span></td>
+                            </tr>
+                            <tr>
+                                <td>教程更新通知（需加群）</td>
+                                <td><span class="no">✘</span></td>
+                                <td><span class="yes">✔</span></td>
+                                <td><span class="yes">✔</span></td>
+                            </tr>
+                            <tr>
+                                <td>参与实物闪拍（秒瞬回本）</td>
+                                <td><span class="no">✘</span></td>
+                                <td><span class="yes">✔</span></td>
+                                <td><span class="yes">✔</span></td>
+                            </tr>
+                            <tr>
+                                <td>参与打卡赠书（小甲鱼亲笔签名）</td>
+                                <td><span class="no">✘</span></td>
+                                <td><span class="yes">✔</span></td>
+                                <td><span class="yes">✔</span></td>
+                            </tr>
+                            <tr>
+                                <td>会员价格</td>
+                                <td>免费</td>
+                                <td>￥199/终身</td>
+                                <td>￥299/终身</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="join-vip-container">
+                    <a href="https://fishc.taobao.com" target="_blank" class="join-vip-btn">立即升级会员</a>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-copyright">
+                Copyright © 2025 FishC.com.cn All rights reserved.
+            </div>
+            <div class="footer-license">
+                粤ICP备18085999号-2 | 粤公网安备 44051102000615号
+            </div>
+        </div>
+    </footer>
+    
+    <script src="assets/fishc.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?343847c23abc66414bc40e2d90ba2cd0";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</body>
+</html>
